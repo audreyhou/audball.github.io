@@ -29,7 +29,7 @@ body {
 
 @keyframes increase {
     from {
-        background: rgb(201, 201, 201);
+        background: rgb(231, 231, 231);
         height: 1px;
         width: 1px;
     }
@@ -57,7 +57,7 @@ body {
 .Title #Name {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
-    font-size: 14px;
+    font-size: 15px;
 
     text-transform: uppercase;
     letter-spacing: 0.7em;
