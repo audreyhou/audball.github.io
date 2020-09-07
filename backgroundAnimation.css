@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.backgroundExtension {
+    height: 1px;
+    width: 1px;
+    background: black;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    -webkit-animation: increase 3s;
+    -moz-animation: increase 3s;
+    -o-animation: increase 3s;
+    animation: increase 3s;
+    animation-fill-mode: forwards;
+
+    z-index: 1;
+}
+
+@keyframes increase {
+    from {
+        height: 1px;
+        width: 1px;
+    }
+    75% {
+        height: 1px;
+        width: 100%;
+    }
+    to {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.LoadingTitle{
+    content: 'Audrey Hou';
+    color: black;
+
+    position: absolute;
+    z-index: 10;
+    top: 48%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -48%);
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+
+    mix-blend-mode: difference;
+
+    width: 350px;
+}
+
+.Title {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.Title #Name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+    color: white;
+
+    z-index: 10;
+}
+
+.Title #Intro {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 8px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+    line-height: 2em;
+    color: white;
+
+    z-index: 10;
+}
+
+
