@@ -92,4 +92,4 @@ function windowResized() {
 /* run animation */
 window.setInterval(() => {
     createLines();
-}, 1500);
+}, 2000);

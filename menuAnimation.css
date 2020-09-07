@@ -2,6 +2,15 @@
     cursor: pointer;
 }
 
+.HamburgerIcon {
+    width: 40px;
+    height: 40px;
+
+    margin: 35px 0px 0px 30px;
+    display: block;
+    position: absolute;     
+}
+
 .HamburgerIcon .Line {
     width: 30px;
     height: 1.5px;
@@ -19,24 +28,24 @@
 }
 
 .HamburgerIcon .Line:nth-child(1) {
-    -webkit-transform: translateX(30px) translateY(35px) skewY(-30deg);
-    -ms-transform: translateX(30px) translateY(35px) skewY(-30deg);
-    -o-transform: translateX(30px) translateY(35px) skewY(-30deg);
-    transform: translateX(30px) translateY(35px) skewY(-30deg);
+    -webkit-transform: skewY(-30deg);
+    -ms-transform: skewY(-30deg);
+    -o-transform: skewY(-30deg);
+    transform: skewY(-30deg);
 }
 
 .HamburgerIcon .Line:nth-child(2) {
-    -webkit-transform: translateX(30px) translateY(45px) skewY(-30deg);
-    -ms-transform: translateX(30px) translateY(45px) skewY(-30deg);
-    -o-transform: translateX(30px) translateY(45px) skewY(-30deg);
-    transform: translateX(30px) translateY(45px) skewY(-30deg);
+    -webkit-transform: translateY(10px) skewY(-30deg);
+    -ms-transform: translateY(10px) skewY(-30deg);
+    -o-transform: translateY(10px) skewY(-30deg);
+    transform: translateY(10px) skewY(-30deg);
 }
 
 .HamburgerIcon .Line:nth-child(3) {
-    -webkit-transform: translateX(30px) translateY(55px) skewY(-30deg);
-    -ms-transform: translateX(30px) translateY(55px) skewY(-30deg);
-    -o-transform: translateX(30px) translateY(55px) skewY(-30deg);
-    transform: translateX(30px) translateY(55px) skewY(-30deg);
+    -webkit-transform: translateY(20px) skewY(-30deg);
+    -ms-transform: translateY(20px) skewY(-30deg);
+    -o-transform: translateY(20px) skewY(-30deg);
+    transform: translateY(20px) skewY(-30deg);
 }
 
 .HamburgerIcon.is-active .Line {
@@ -49,10 +58,10 @@
 }
   
 .HamburgerIcon.is-active .Line:nth-child(1) {
-    -webkit-transform: translateX(30px) translateY(35px);
-    -ms-transform: translateX(30px) translateY(35px);
-    -o-transform: translateX(30px) translateY(35px);
-    transform: translateX(30px) translateY(35px);
+    -webkit-transform: skewY(0deg);
+    -ms-transform: skewY(0deg);
+    -o-transform: skewY(0deg);
+    transform: skewY(0deg);
 
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
@@ -60,10 +69,10 @@
 }
   
 .HamburgerIcon.is-active .Line:nth-child(2) {
-    -webkit-transform: translateX(25.5px) translateY(45px) scaleX(0.7);
-    -ms-transform: translateX(25.5px) translateY(45px) scaleX(0.7);
-    -o-transform: translateX(25.5px) translateY(45px) scaleX(0.7);
-    transform: translateX(25.5px) translateY(45px) scaleX(0.7);
+    -webkit-transform: translateX(-4.5px) translateY(10px) scaleX(0.7);
+    -ms-transform: translateX(-4.5px) translateY(10px) scaleX(0.7);
+    -o-transform: translateX(-4.5px) translateY(10px) scaleX(0.7);
+    transform: translateX(-4.5px) translateY(10px) scaleX(0.7);
     
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
@@ -71,10 +80,10 @@
 }
   
 .HamburgerIcon.is-active .Line:nth-child(3) {
-    -webkit-transform: translateX(30px) translateY(55px);
-    -ms-transform: translateX(30px) translateY(55px);
-    -o-transform: translateX(30px) translateY(55px);
-    transform: translateX(30px) translateY(55px);
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+    transform: translateY(20px);
     
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
