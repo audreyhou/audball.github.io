@@ -39,25 +39,20 @@
     transform: translateX(30px) translateY(55px) skewY(-30deg);
 }
 
-.HamburgerIcon.is-active {
+.HamburgerIcon.is-active .Line {
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -webkit-transition-delay: 0.6s;
     -o-transition-delay: 0.6s;
     transition-delay: 0.6s;
-
-    -webkit-transform: skewY(30deg);
-    -ms-transform: skewY(30deg);
-    -o-transform: skewY(30deg);
-    transform: skewY(30deg);
 }
   
 .HamburgerIcon.is-active .Line:nth-child(1) {
-    -webkit-transform: skewY(30deg);
-    -ms-transform: skewY(30deg);
-    -o-transform: skewY(30deg);
-    transform: skewY(30deg);
+    -webkit-transform: translateX(30px) translateY(35px);
+    -ms-transform: translateX(30px) translateY(35px);
+    -o-transform: translateX(30px) translateY(35px);
+    transform: translateX(30px) translateY(35px);
 
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
@@ -65,10 +60,10 @@
 }
   
 .HamburgerIcon.is-active .Line:nth-child(2) {
-    -webkit-transform: scaleX(0.7) skewY(30deg);
-    -ms-transform: scaleX(0.7) skewY(30deg);
-    -o-transform: scaleX(0.7) skewY(30deg);
-    transform: scaleX(0.7) skewY(30deg);
+    -webkit-transform: translateX(25.5px) translateY(45px) scaleX(0.7);
+    -ms-transform: translateX(25.5px) translateY(45px) scaleX(0.7);
+    -o-transform: translateX(25.5px) translateY(45px) scaleX(0.7);
+    transform: translateX(25.5px) translateY(45px) scaleX(0.7);
     
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
@@ -76,10 +71,10 @@
 }
   
 .HamburgerIcon.is-active .Line:nth-child(3) {
-    -webkit-transform: skewY(30deg);
-    -ms-transform: skewY(30deg);
-    -o-transform: skewY(30deg);
-    transform: skewY(30deg);
+    -webkit-transform: translateX(30px) translateY(55px);
+    -ms-transform: translateX(30px) translateY(55px);
+    -o-transform: translateX(30px) translateY(55px);
+    transform: translateX(30px) translateY(55px);
     
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
