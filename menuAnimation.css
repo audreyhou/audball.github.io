@@ -1,3 +1,7 @@
+.Menu {
+    margin: 35px 0px 0px 30px;
+}
+
 .HamburgerIcon:hover {
     cursor: pointer;
 }
@@ -6,7 +10,6 @@
     width: 40px;
     height: 40px;
 
-    margin: 35px 0px 0px 30px;
     display: block;
     position: absolute;     
 }
@@ -88,4 +91,42 @@
     -webkit-transition-delay: 0.3s;
     -o-transition-delay: 0.3s;
     transition-delay: 0.3s;
+}
+
+.MenuItems {
+    margin-top: 7px;
+    margin-left: 45px;
+    position: absolute;
+
+    display: flex;
+    justify-content: space-around;
+
+    z-index: 10;
+}
+
+.MenuItems #MenuItem-Menu,
+.MenuItems #MenuItem-About,
+.MenuItems #MenuItem-Experience,
+.MenuItems #MenuItem-Photography {
+    margin: 5px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
+    text-align: center;
+    color: white;
+
+    z-index: 10;
+}
+
+.MenuItems #MenuItem-Menu {
+    display: block;
+}
+
+.MenuItems #MenuItem-About,
+.MenuItems #MenuItem-Experience,
+.MenuItems #MenuItem-Photography {
+    display: none;
 }
