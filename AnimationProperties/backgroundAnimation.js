@@ -4,8 +4,6 @@ console.clear();
 const deg = a => Math.PI / 180 * a;
 const randomGenerator = () => Math.floor(40 + Math.random() * 1080) * Math.round(Math.random());
 
-/* Preload */
-
 /* Setup */
 const Points = [];
 
