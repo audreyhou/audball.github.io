@@ -22,24 +22,6 @@ body {
 
     z-index: 1;
 }
-/* 
-@keyframes increase {
-    from {
-        background: rgb(231, 231, 231);
-        height: 1px;
-        width: 1px;
-    }
-    75% {
-        background: rgb(133, 133, 133);
-        height: 1px;
-        width: 100%;
-    }
-    to {
-        background: black;
-        height: 100%;
-        width: 100%;
-    }
-} */
 
 .Title {
     position: absolute;

@@ -1,37 +1,49 @@
 console.clear();
 
 /* Setup */
-var i = 0;
+var iteration = 0;
 
 function setup() {
     var canvas = createCanvas(window.innerWidth, window.innerHeight);
     canvas.parent("backgroundCanvas");
     
-    colorMode(HSB, 255);
+    colorMode(RGB, 255);
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
+function drawLines() {
+    var originalR = 29;
+    var originalG = 27;
+    var originalB = 57;
+    for(let i = 0; i < 200; i++) {
+        var amplitude = height * (Math.sin(iteration) * 0.1);
+        var space = abs((Math.sin(iteration)) * 0.001) * 100 + 150;
+
+        strokeWeight(abs(Math.sin(iteration)) * 0.05);
+        beginShape();
+        curveVertex(-space, 0);
+
+        for (var x = 0; x < width; x += space) {
+            var y = height * ((Math.sin(iteration) * 0.01) + 0.5);
+            y += Math.sin(iteration - x * 0.01 + noise(iteration * 0.1) * -50) * amplitude;
+            y += Math.sin(iteration + x * 0.02) * amplitude;
+            y += Math.sin(iteration - x * 0.03 + noise(iteration * 0.1) * 50) * amplitude;
+            curveVertex(x, y);
+        }
+
+        curveVertex(width, y);
+        curveVertex(width + space, y);
+        endShape();
+        
+        stroke(color(255, 255, 255, i*0.2));
+    }
+}
+
 function draw() {
     noFill();
-    var amplitude = height * (sin(i) * 0.1);
-    strokeWeight(abs(sin(i)) * 0.5);
-    var space = abs((sin(i)) * 0.001) * 100 + 150;
-    beginShape();
-    curveVertex(-space, 0);
-    for (var x = 0; x < width; x += space) {
-        var y = height * ((sin(i) * 0.01) + 0.5);
-        y += sin(i - x * 0.01 + noise(i * 0.1) * -50) * amplitude;
-        y += sin(i + x * 0.02) * amplitude;
-        y += sin(i - x * 0.03 + noise(i * 0.1) * 50) * amplitude;
-        curveVertex(x, y);
-    }
-    curveVertex(width, y);
-    curveVertex(width + space, y);
-    endShape();
-    var rgb = ~~abs(sin(i) * 100) + 155;
-    stroke(color(rgb, rgb, rgb, 100));
-    i += 0.01;
+    drawLines();
+    iteration += 0.01;
 }
