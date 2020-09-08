@@ -18,8 +18,6 @@ body {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
-    animation-fill-mode: forwards;
-
     z-index: 1;
 }
 
@@ -52,7 +50,7 @@ body {
 
 @keyframes nameColorChange {
     from {
-        color: black;
+        color: transparent;
     }
     to {
         color: white;
@@ -70,10 +68,10 @@ body {
     line-height: 2em;
     color: white;
     
-    -webkit-animation: introColorChange 5s;
-    -moz-animation: introColorChange 5s;
-    -o-animation: introColorChange 5s;
-    animation: introColorChange 5s;
+    -webkit-animation: introColorChange 4s;
+    -moz-animation: introColorChange 4s;
+    -o-animation: introColorChange 4s;
+    animation: introColorChange 4s;
 
     z-index: 10;
 }

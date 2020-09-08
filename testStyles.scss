@@ -1,0 +1,158 @@
+$total: 400; // total particles
+$orb-size: 100px;
+$particle-size: 2px;
+$time: 14s; 
+$base-hue: 200; // change for diff colors (180 is nice)
+$base-lightness: 100;
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.backgroundExtension {
+    height: 100%;
+    width: 100%;
+    background: black;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+.Title {
+    position: absolute;
+    margin-top: 0.15rem;
+    margin-left: 0.3rem;
+
+    z-index: 10;
+
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.Title #Name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+    color: white;
+
+    -webkit-animation: nameColorChange 3s;
+    -moz-animation: nameColorChange 3s;
+    -o-animation: nameColorChange 3s;
+    animation: nameColorChange 3s;
+
+    z-index: 10;
+}
+
+@keyframes nameColorChange {
+    from {
+        color: transparent;
+    }
+    to {
+        color: white;
+    }
+}
+
+.Title #Intro {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 8px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+    line-height: 2em;
+    color: white;
+    
+    -webkit-animation: introColorChange 4s;
+    -moz-animation: introColorChange 4s;
+    -o-animation: introColorChange 4s;
+    animation: introColorChange 4s;
+
+    z-index: 10;
+}
+
+@keyframes introColorChange {
+    from {
+        color: transparent;
+    }
+    75% {
+        color: transparent;
+    }
+    to {
+        color: white;
+    }
+}
+
+.wrap {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 0; 
+    height: 0; 
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: rotate $time infinite linear; // rotate orb
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotateY(360deg) rotateX(360deg);
+    }
+}
+
+.c {
+    position: absolute;
+    width: $particle-size;
+    height: $particle-size;
+    border-radius: 50%;
+    opacity: 0; 
+}
+
+@for $i from 1 through $total {
+    $z: (random(360) * 1deg); // random angle to rotateZ
+    $y: (random(360) * 1deg); // random to rotateX
+    $hue: ((90/$total * $i) + $base-hue); // set hue
+    $lightness: ($base-lightness - (20/$total * $i)); // set hue
+
+    .c:nth-child(#{$i}){ // grab the nth particle
+        animation: orbit#{$i} $time infinite;
+        animation-delay: ($i * .01s); 
+        background-color: hsla(180, 100%, $lightness, 0.6);
+    }
+
+    @keyframes orbit#{$i} { 
+        20% {
+            opacity: 1; // fade in
+        }
+        30% {
+            transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z); // form orb
+        }
+        80% {
+            transform: rotateZ(-$z) rotateY($y) translateX($orb-size) rotateZ($z); // hold orb state 30-80
+            opacity: 1; // hold opacity 20-80
+        }
+        100% {
+            transform: rotateZ(-$z) rotateY($y) translateX( ($orb-size * 3) ) rotateZ($z); // translateX * 3
+        }
+    }
+}

@@ -8,42 +8,48 @@ function setup() {
     canvas.parent("backgroundCanvas");
     
     colorMode(RGB, 255);
+    noLoop();
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(window.innerWidth, window.innerHeight);
 }
 
 function drawLines() {
-    var originalR = 29;
-    var originalG = 27;
-    var originalB = 57;
-    for(let i = 0; i < 200; i++) {
-        var amplitude = height * (Math.sin(iteration) * 0.1);
-        var space = abs((Math.sin(iteration)) * 0.001) * 100 + 150;
-
-        strokeWeight(abs(Math.sin(iteration)) * 0.05);
-        beginShape();
-        curveVertex(-space, 0);
-
-        for (var x = 0; x < width; x += space) {
-            var y = height * ((Math.sin(iteration) * 0.01) + 0.5);
-            y += Math.sin(iteration - x * 0.01 + noise(iteration * 0.1) * -50) * amplitude;
-            y += Math.sin(iteration + x * 0.02) * amplitude;
-            y += Math.sin(iteration - x * 0.03 + noise(iteration * 0.1) * 50) * amplitude;
-            curveVertex(x, y);
-        }
-
-        curveVertex(width, y);
-        curveVertex(width + space, y);
-        endShape();
-        
-        stroke(color(255, 255, 255, i*0.2));
+    for(let i = 0; i < 100; i++) {
+        drawLine(iteration - i, i);
     }
 }
 
+function drawLine(t, intensity) {
+    beginShape();
+    curveVertex(-space, 0);
+
+    var amplitude = height * (Math.sin(t) * 0.1);
+    var space = abs((Math.sin(t)) * 0.001) * 100 + 150;
+
+    for (var x = 0; x < window.innerWidth; x += space) {
+        var y = height * ((Math.sin(t) * 0.01) + 0.5);
+        y += Math.sin(t - x * 0.01 + noise(t * 0.1) * -50) * amplitude;
+        y += Math.sin(t + x * 0.02) * amplitude;
+        y += Math.sin(t - x * 0.03 + noise(t * 0.1) * 50) * amplitude;
+        curveVertex(x, y);
+    }
+
+    curveVertex(window.innerWidth, y);
+    curveVertex(window.innerWidth + space, y);
+    endShape();
+    
+    stroke(color(255, 255, 255, 0.2 * intensity), intensity);
+}
+
 function draw() {
+    clear();
     noFill();
     drawLines();
     iteration += 0.01;
 }
+
+window.setInterval(() => {
+    redraw();
+}, 20);

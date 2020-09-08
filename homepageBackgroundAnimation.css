@@ -18,13 +18,15 @@ body {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
+    z-index: 1;
+}
+
+.backgroundAnimation {
     -webkit-animation: increase 3s;
     -moz-animation: increase 3s;
     -o-animation: increase 3s;
     animation: increase 3s;
     animation-fill-mode: forwards;
-
-    z-index: 1;
 }
 
 @keyframes increase {

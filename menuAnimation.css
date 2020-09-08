@@ -11,7 +11,9 @@
     height: 40px;
 
     display: block;
-    position: absolute;     
+    position: absolute;
+
+    z-index: 21;
 }
 
 .HamburgerIcon .Line {
@@ -104,9 +106,13 @@
     z-index: 10;
 }
 
+.MenuItems #MenuItem-Home,
 .MenuItems #MenuItem-About,
 .MenuItems #MenuItem-Experience,
-.MenuItems #MenuItem-Photography {
+.MenuItems #MenuItem-Photography,
+.MenuItems #MenuItem-Contact,
+.MenuItems #MenuItem-Contact 
+{
     margin: 5px;
     display: none;
 
@@ -116,7 +122,18 @@
 
     letter-spacing: 0.2em;
     text-align: center;
+    text-decoration: none;
     color: white;
 
     z-index: 10;
+}
+
+.MenuItems #MenuItem-Home:hover,
+.MenuItems #MenuItem-About:hover,
+.MenuItems #MenuItem-Experience:hover,
+.MenuItems #MenuItem-Photography:hover,
+.MenuItems #MenuItem-Contact:hover,
+.MenuItems #MenuItem-Contact:hover 
+{
+    color: rgb(221, 253, 255);
 }

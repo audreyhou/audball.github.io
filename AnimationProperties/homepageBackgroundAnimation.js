@@ -24,6 +24,12 @@ function setup() {
     }
     
     createLines();
+
+    setTimeout(() => {
+        homeVisited = true;
+        
+        console.log("home is visited");
+    }, 3000);
 }
 
 /* Lines */
