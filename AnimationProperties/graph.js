@@ -5,7 +5,7 @@ const rad2deg = rad => { return rad * 180 / Math.PI; }
 
 const initialData = { nodes: [{ id: 0 }], links: [] };
 
-const N = 500;
+const N = 300;
 const nodes = [...Array(N).keys()].map(i => {
     return { 
         id: i,
@@ -16,7 +16,7 @@ const nodes = [...Array(N).keys()].map(i => {
 function generateLinks(nodes) {
     let links = [];
     nodes.forEach(node => {
-        let numNodeLinks = Math.round(Math.random() * (0.5 + Math.random())) + 1;
+        let numNodeLinks = Math.round(Math.random() * (0.2 + Math.random())) + 1;
         for(let i = 0; i < numNodeLinks; i++) {
             links.push({
                 source: node.id,
@@ -36,27 +36,28 @@ const graphElem = document.getElementById("graph");
 
 const Graph = ForceGraph3D()(graphElem);
 
-Graph.enableNodeDrag(false);
+Graph.enableNodeDrag(true);
 Graph.enableNavigationControls(false);
 Graph.enablePointerInteraction(true);
 Graph.showNavInfo(false);
 
 Graph.cameraPosition({ z: distance });
 
-Graph.nodeRelSize(4);
+Graph.nodeRelSize(3.5);
 Graph.nodeOpacity(1);
+Graph.nodeColor('green');
 
-Graph.linkWidth(2);
+Graph.linkWidth(1.5);
 
 Graph.linkDirectionalParticles(3);
 Graph.linkDirectionalParticleWidth(3);
+Graph.linkDirectionalParticleSpeed(0.005);
 
 const bloomPass = new UnrealBloomPass();
 
-bloomPass.strength = 2.5;
+bloomPass.strength = 3;
 bloomPass.radius = 1;
 bloomPass.threshold = 0.5;
-bloomPass.exposure = 0.5;
 Graph.postProcessingComposer().addPass(bloomPass);
 
 Graph.graphData(gData);
@@ -68,7 +69,7 @@ setInterval(() => {
         z: distance * Math.cos(deg2rad(currentAngle))
     });
     
-    currentAngle += 0.5;
+    currentAngle += 0.1;
 }, 10);
 
 window.addEventListener('resize', e => {
