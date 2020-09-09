@@ -42,9 +42,10 @@ Graph.enablePointerInteraction(true);
 Graph.showNavInfo(false);
 
 Graph.cameraPosition({ z: distance });
+Graph.backgroundColor("#000000")
 
 Graph.nodeRelSize(3.5);
-Graph.nodeOpacity(1);
+Graph.nodeOpacity(0.8);
 Graph.nodeColor('green');
 
 Graph.linkWidth(1.5);
@@ -55,7 +56,7 @@ Graph.linkDirectionalParticleSpeed(0.005);
 
 const bloomPass = new UnrealBloomPass();
 
-bloomPass.strength = 3;
+bloomPass.strength = 2.5;
 bloomPass.radius = 1;
 bloomPass.threshold = 0.5;
 Graph.postProcessingComposer().addPass(bloomPass);
