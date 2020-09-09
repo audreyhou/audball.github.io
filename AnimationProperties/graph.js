@@ -5,7 +5,7 @@ const rad2deg = rad => { return rad * 180 / Math.PI; }
 
 const initialData = { nodes: [{ id: 0 }], links: [] };
 
-const N = 300;
+const N = 225;
 const nodes = [...Array(N).keys()].map(i => {
     return { 
         id: i,
@@ -16,7 +16,7 @@ const nodes = [...Array(N).keys()].map(i => {
 function generateLinks(nodes) {
     let links = [];
     nodes.forEach(node => {
-        let numNodeLinks = Math.round(Math.random() * (0.2 + Math.random())) + 1;
+        let numNodeLinks = Math.round(Math.random() * (0.2 + Math.random()*0.7)) + 1;
         for(let i = 0; i < numNodeLinks; i++) {
             links.push({
                 source: node.id,
@@ -46,7 +46,7 @@ Graph.backgroundColor("#000000")
 
 Graph.nodeRelSize(3.5);
 Graph.nodeOpacity(0.8);
-Graph.nodeColor('green');
+Graph.nodeColor(node => nodes.includes(node) ? "#e3e3e3" : "grey");
 
 Graph.linkWidth(1.5);
 
@@ -70,7 +70,7 @@ setInterval(() => {
         z: distance * Math.cos(deg2rad(currentAngle))
     });
     
-    currentAngle += 0.1;
+    currentAngle += 0.05;
 }, 10);
 
 window.addEventListener('resize', e => {
