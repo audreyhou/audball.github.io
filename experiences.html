@@ -4,16 +4,14 @@
 <head>
     <title> Audrey's Website </title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="indexStyles.css">
+    <link rel="stylesheet" type="text/css" href="experiencesStyles.css">
     <link rel="stylesheet" type="text/css" href="menuAnimation.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//unpkg.com/3d-force-graph"></script>
 </head>
 
 <body>
-    <script src="AnimationProperties/homepageBackgroundAnimation.js"></script>
-    <script src="AnimationProperties/menu.js"></script>
-
     <div>
         <div class="Menu">
             <div class="HamburgerIcon">
@@ -40,13 +38,15 @@
             </div>
         </div>
         <div class="Title">
-            <h1 id="Name"> Audrey Hou </h1>
-            <h1 id="Intro"> Developer. Designer. Math Enthusiast. Photographer. </h1>
+            <h1 id="Name"> Experiences </h1>
+            <h1 id="Intro"> Coming soon... </h1>
         </div>
-        <div class="backgroundExtension backgroundAnimation">
-            <div id="backgroundCanvas"></div>
-        </div>
+        <div id="graph"></div>
     </div>
+
+    <script src="AnimationProperties/three.js"></script>
+    <script type="module" src="AnimationProperties/graph.js"></script>
+    <script src="AnimationProperties/menu.js"></script>
 </body>
 
 </html>
