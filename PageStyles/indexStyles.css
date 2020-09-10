@@ -35,6 +35,11 @@ body {
         height: 1px;
         width: 1px;
     }
+    10% {
+        background: rgb(231, 231, 231);
+        height: 1px;
+        width: 20px;
+    }
     75% {
         background: rgb(133, 133, 133);
         height: 1px;
