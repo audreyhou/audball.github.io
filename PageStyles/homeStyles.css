@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.backgroundExtension {
+    height: 100%;
+    width: 100%;
+    background: black;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+.Title {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.Title #Name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+    color: white;
+
+    -webkit-animation: nameColorChange 3s;
+    -moz-animation: nameColorChange 3s;
+    -o-animation: nameColorChange 3s;
+    animation: nameColorChange 3s;
+
+    z-index: 10;
+}
+
+@keyframes nameColorChange {
+    from {
+        color: black;
+    }
+    10% {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}
+
+.Title #Intro {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 8px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    text-align: center;
+    line-height: 2em;
+    color: white;
+    
+    -webkit-animation: introColorChange 3.5s;
+    -moz-animation: introColorChange 3.5s;
+    -o-animation: introColorChange 3.5s;
+    animation: introColorChange 3.5s;
+
+    z-index: 10;
+}
+
+@keyframes introColorChange {
+    from {
+        color: transparent;
+    }
+    75% {
+        color: transparent;
+    }
+    to {
+        color: white;
+    }
+}
