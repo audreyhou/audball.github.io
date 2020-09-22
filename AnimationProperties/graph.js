@@ -47,6 +47,19 @@ Graph.backgroundColor("#000000")
 Graph.nodeRelSize(3.5);
 Graph.nodeOpacity(0.8);
 Graph.nodeColor(node => nodes.includes(node) ? "#e3e3e3" : "grey");
+Graph.onNodeClick(node => {
+    const distance = 40;
+    const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+
+    Graph.cameraPosition({ 
+        x: node.x * distRatio, 
+        y: node.y * distRatio, 
+        z: node.z * distRatio 
+    }, // new position
+    node, // lookAt ({ x, y, z })
+    3000  // ms transition duration
+    );
+});
 
 Graph.linkWidth(1.5);
 
